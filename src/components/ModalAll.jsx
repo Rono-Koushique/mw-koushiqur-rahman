@@ -32,13 +32,15 @@ export default function ModalAll({ modalStates, setModalStates }) {
                         contacts.map((contact) => {
                             return (
                                 <div
-                                    style={{
-                                        color: "blue",
-                                        hover: {
-                                            color: "black",
-                                        },
-                                    }}
+                                    className="link"
                                     key={contact.id}
+                                    onClick={() => {
+                                        setModalStates({
+                                            ...initialModalState,
+                                            singleContact: true,
+                                            contactInfo: { ...contact },
+                                        });
+                                    }}
                                 >
                                     {contact.phone}
                                 </div>

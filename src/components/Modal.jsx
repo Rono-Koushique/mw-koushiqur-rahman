@@ -45,7 +45,6 @@ export default function Modal({ children, modalStates, setModalStates }) {
                     transform: "translateX(-50%) translateY(-50%)",
                     maxWidth: "100%",
                     maxHeight: "calc(100% - 4rem)",
-                    overflowY: "scroll",
                     zIndex: "10",
                     background: "white",
                     padding: "2rem",
@@ -56,7 +55,7 @@ export default function Modal({ children, modalStates, setModalStates }) {
                     gap: "1rem",
                 }}
             >
-                {children}
+                <div style={{ overflowY: "scroll" }}>{children}</div>
                 <div className="d-flex justify-content-center gap-3">
                     <button
                         className="btn btn-lg"

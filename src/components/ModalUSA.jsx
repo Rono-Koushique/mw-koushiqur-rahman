@@ -33,13 +33,8 @@ export default function ModalUSA({ modalStates, setModalStates }) {
                     {contacts &&
                         contacts.map((contact) => {
                             return (
-                                <div
-                                    style={{
-                                        color: "blue",
-                                        hover: {
-                                            color: "black",
-                                        },
-                                    }}
+                                <p
+                                    className="link"
                                     key={contact.id}
                                     onClick={() => {
                                         setModalStates({
@@ -50,7 +45,7 @@ export default function ModalUSA({ modalStates, setModalStates }) {
                                     }}
                                 >
                                     {contact.phone}
-                                </div>
+                                </p>
                             );
                         })}
                 </div>

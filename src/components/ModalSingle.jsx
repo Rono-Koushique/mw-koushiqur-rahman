@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 
-const initialModalState = {
-    allContact: false,
-    usContact: false,
-    singleContact: false,
-    contactInfo: null,
-};
-
 export default function ModalSingle({ modalStates, setModalStates }) {
     const contact = modalStates.contactInfo;
     return (
