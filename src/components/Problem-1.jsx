@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
     filterActives,
     filterCompleteds,
@@ -16,6 +16,7 @@ const Problem1 = () => {
     const [newTask, setNewTask] = useState(initialValue);
     const [allTask, setAllTask] = useState([]);
     const [displayTask, setDisplayTask] = useState([]);
+    const ref = useRef(null);
 
     /* ------------------------- change show status type ------------------------ */
     const handleClick = (val) => {
@@ -33,6 +34,7 @@ const Problem1 = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        ref.current.focus();
         setAllTask((prevState) => [...prevState, newTask]);
         setTask(initialValue);
     };
@@ -61,6 +63,8 @@ const Problem1 = () => {
         }
     }, [allTask, show]);
 
+    
+
     return (
         <div className="container">
             <div className="row justify-content-center mt-5">
@@ -78,6 +82,7 @@ const Problem1 = () => {
                                 name="name"
                                 value={newTask.name}
                                 onChange={handleChange}
+                                ref={ref}
                             />
                         </div>
                         <div className="col-auto">

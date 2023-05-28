@@ -1,3 +1,11 @@
 @import "abstract/variables";
-@import 'bootstrap/scss/bootstrap.scss';
+@import "bootstrap/scss/bootstrap.scss";
 @import "abstract/base";
+
+// .modal {
+//     position: fixed;
+//     z-index: 5;
+//     top: 50%;
+//     left: 50%;
+//     transform: translateX(-50%) translateY(-50%);
+// }
